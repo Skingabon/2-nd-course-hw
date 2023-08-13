@@ -63,7 +63,7 @@ body {
  
 
 .games {
-    height: 556px;
+    /* height: 556px;
     background-color: #000915;
     background-repeat: no-repeat;
     background-position: center;
@@ -72,21 +72,42 @@ body {
     flex-direction: row;
     align-content: center;
     justify-content: center;
-    /* row-gap: 32px; */
+    row-gap: 32px;
     box-sizing: border-box;
-    margin-bottom: 128px;
+    margin-bottom: 128px; */
+    background-color: #000915;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 556px;
+    display: flex;
+    grid-column: span 4;
+    gap: 32px;
+
+
   }
 
   .game {
     width: 379px;
     height: 300px;
     border-radius: 16px;
-    margin-left: 120px;
+    /* margin-left: 120px; */
   }
 
-  .game-img__text {
+  .game-1 {
+    background-image: url(img/main/Igra1.png);
+    background-repeat: no-repeat;
+    font-weight: 600;
+    line-height: 32px; 
+    width: 379px;
+height: 300px;
+  }
+
+  .game-1__text {
     color: #FFF;
     font-size: 24px;
     font-weight: 600;
     line-height: 32px; 
+    margin-top: 236px;
+    margin-left: 32px;
   }
