@@ -15,11 +15,78 @@ body {
   padding-right: calc(50% - 600px);
 }
 
-.top {
-    height: 1024;
-    background-image: url(img/main/Rectangle\ 1.jpg);
+.heading {
+    height: 1024px;
+    background-image: url(img/main/Rectangle1.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     
 }
+
+    .top-content__title {
+    padding-top: 217px;
+    /* margin-left: 120px; */
+        color: #FFF;
+        font-size: 64px;
+        font-weight: 700;
+    }
+    .top-content__text {
+    margin-top: 32px;
+    margin-bottom: 44px;
+    /* margin-left: 120px; */
+        color: #FFF;
+        font-size: 18px;
+        font-weight: 300;
+        
+    }
+
+    .top-content__text--bold {
+        color: #FFF;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .top-content__podpiska {
+        width: 234px;
+        height: 48px;
+        border-radius: 30px;
+        background: #9C0332;
+        /* margin-left: 120px; */
+        margin-bottom: 493px;
+        border-color: transparent;
+        color: #FFF;
+        font-size: 18px;
+        font-weight: 400;
+
+    }
+ 
+
+.games {
+    height: 556px;
+    background-color: #000915;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    /* row-gap: 32px; */
+    box-sizing: border-box;
+    margin-bottom: 128px;
+  }
+
+  .game {
+    width: 379px;
+    height: 300px;
+    border-radius: 16px;
+    margin-left: 120px;
+  }
+
+  .game-img__text {
+    color: #FFF;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px; 
+  }
