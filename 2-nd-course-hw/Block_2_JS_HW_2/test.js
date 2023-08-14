@@ -75,3 +75,9 @@ isAdmin: true
 
 //Задание 9.1
 user["city of residence"]
+
+//Задание 9.2
+user.name = 100;
+
+//Задание 9.3
+delete user["city of residence"]
