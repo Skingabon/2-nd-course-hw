@@ -75,3 +75,82 @@
 // break
 // }
 // }
+
+// //Тренировка 7
+
+// let monthYear = 1;
+// //Number(prompt('Введите номер месяца в году'));
+// while (monthYear <=12) {
+//     if (monthYear >=1 && monthYear <=2 || monthYear ===12) 
+//         {console.log('Зима');}
+//     else if (monthYear >=3 && monthYear <=5)
+//         {console.log('Весна');}
+//     else if (monthYear >=6 && monthYear <=8)
+//         {console.log('Лето');}
+//     else if (monthYear >=9 && monthYear <=11)
+//         {console.log('Осень');}
+
+//     monthYear++;
+// }
+
+// //Тренировка 8
+
+// for(let monthNumber = 1; 
+//     /* Объявляем переменную monthNumber, которая будет видна только в 
+//     пределах нашего цикла */
+//     monthNumber <= 12; 
+//     /* Проверяем, что monthNumber соответствует номеру месяца 
+//     (т. е. 0 < monthNumber <= 12 */
+//     monthNumber++ 
+//     // Увеличиваем переменную monthNumber на 1 для следующего шага
+//     ) {
+//         console.log(monthNumber);
+//     }
+
+// //Тренировка 9
+
+// for (let monthYear = 1; monthYear <=12; monthYear++) {
+//     if (monthYear >=1 && monthYear <=2 || monthYear ===12) 
+//         {console.log('Зима');}
+//     else if (monthYear >=3 && monthYear <=5)
+//         {console.log('Весна');}
+//     else if (monthYear >=6 && monthYear <=8)
+//         {console.log('Лето');}
+//     else if (monthYear >=9 && monthYear <=11)
+//         {console.log('Осень');}
+// }
+
+// //Тренировка 10
+
+// Объявляем переменную dayNumber, которая равна номеру дня в месяце
+// let dayN = Number(prompt('Введите число месяца'));
+// for (let dayNumber = dayN; dayNumber <= 31; dayNumber++) { 
+//     // Каждый день проверяем, является ли он третьим (выходным)
+//       if (dayNumber % 3 == 0) {
+//       // Выводим сообщение
+//           console.log("Сегодня отдыхаем!"); 
+//       // Ждем следующий день
+//           continue; 
+//       }
+//       console.log("Рабочий день, братец. Вот тебе план работ:..."); 
+//     // Если проверка не прошла и день не выходной, выводим сообщение
+//   }
+
+// //Тренировка 11
+
+let currentYear = 2021;
+for (let year = currentYear; ; year++) { 
+/* Мы создали еще одну переменную, куда передали значение из переменной 
+currentYear (так как не хотим модернизировать ее). */
+	if (isLeap(year)) { 
+  /* С помощью вашего решения мы проверяем год. В данном примере 
+  используется проверка c помощью функции isLeap(), что такое функции
+  и как их реализовывать мы рассмотрим на следующем уроке. А пока
+  стоит знать, что isLeap() возвращает true, если год высокосный, и
+  false — если нет */
+		console.log("Ближайшим високосным годом является: " + year);
+		break; 
+     /* Если год найден, цикл можно остановить, так как не имеет смысла 
+        дальше его продолжать крутить. */
+	}
+}
