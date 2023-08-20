@@ -1,172 +1,77 @@
-// Block_HW_2-------------------------------------------------------------------------
-// let age = Number(prompt('Сколько вам лет?'));
-// let result = age + 17;
-// alert(`Через 17 лет вам будет ${result}`);
+// // Block_HW_4-------------------------------------------------------------------------
+// //тренировка 1 While
+// let  i = 1;
 
-// let salary = prompt('Введите Вашу ЗП');
-// let allMoney = salary / 100 * 87;
-// alert(typeof salary);
-// alert(typeof allMoney);
-// alert(allMoney);
-// console.log(`Деньги в твоем распоряжении ${allMoney}`);
+// let n = Number(prompt('Сколько раз Вам сказать ПривуЭт?'));
 
-// let x=5;
-//  ++x;
-//  alert(x);
-
-// // Задание 1
-// let sky = 10;
-// alert(sky);
-// sky=20;
-// console.log(sky)
-
-
-// // Задание 2
-// let iphoneYear = 2007;
-// console.log(iphoneYear)
-
-// //Задание 3
-// let userNameJS = 'Brendanom Aikom';
-// console.log(userNameJS);
-
-// //Задание 4
-// let x = 10;
-// let y = 2;
-// alert(x + y);
-// alert(x - y);
-// alert(x * y);
-// alert(x / y);
-
-// //Задание 5
-// let result = 2**5;
-// alert(result);
-
-// //Задание 6
-// let a = 9;
-// let b = 2;
-// alert(a % b);
-
-// //Задание 7
-// let num = 1;
-// num +=5;
-// alert(num);
-
-// num -=3;
-// alert(num);
-
-// num *= 7;
-// alert(num);
-
-// num /= 3;
-// alert(num);
-
-// num +=1;
-// alert(num);
-
-// num -=1;
-// alert(num);
-
-// //Задание 8
-// let age = prompt("Сколько вам лет?");
-// alert(age);
-
-// // //Задание 9.0
-// let user = {
-// name: 'Tim',
-// age: 80,
-// isAdmin: true
+// while (i <= n) {
+//     alert('Привет');
+//     i++
 // }
 
-// //Задание 9.1
-// user["city of residence"]
+// //тренировка 2 Do While
+// let q
+// do {
+//     q = Number(prompt('Введите номер 5 для проверки'));
+// } while (q !==5); 
 
-// //Задание 9.2
-// user.age = 100;
+// //тренировка 3 Break
+// while (!isQueueEmpty) { // Пока очередь перед нами не пуста
+// 	if (dontWantToWait) { // Если ждать надоело
+// 		console.log("Вы устали ждать и покинули очередь.");
+// 		break; // Прерываем ожидание и уходим
+// 	}
+// 	wait(); // Ждем
+// }
 
-// //Задание 9.3
-// delete user["city of residence"]
+// //тренировка 4
+// while(true) { // запускаем бесконечный цикл,
+//     // т.к. не знаем точной итерации на которой нужно будет выйти из цикла
+//         const msg = prompt('Введите ваше сообщение'); // в переменную msg записываем
+//         // сообщение введенное пользователем
+//         console.log(msg); // выводим сообщение пользователя
+//         if (msg === 'end') { // проверяем, сообщение введенное пользователем равно end
+//             break; // если равно, то выходим из цикла
+//         }
+//     }
 
-// //Задание 9.4
-// let info = prompt("Какую информацию хотите узнать о пользователе?");
-// alert(user[info])
+//повторил сам    
+// while(true) {
+//     let msg = prompt('Введите ваше что-то');
+//     console.log(msg);
+//     if (msg === 'end') {
+//         break
+//     }
+// }
 
-// //Задание 10
-// let personName = prompt("Как Вас зовут?");
-// alert(`Привет, ${personName}!`)
+// //Тренировка  5
+// let i = 0; // задаем начальное значение счетчика
+// let sum = 0; // объявляем переменную, в которой будем хранить сумму
+// while(i <= 10) { // проверяем, что счетчик меньше 10
+// 	i++; // увеличиваем счётчик на 1
+// 	if (i % 4 === 0) { // проверяем, что счётчик кратен 4
+// 		continue; // если кратен, то код ниже выполнен не будет
+// 	}
+// 	sum += i; // увеличиваем сумму на текущий счётчик,
+// 	// если i будет кратно 4, эта строка не выполится
+// }
+
+// console.log(sum); // 54
+
+// //Тренировка 6
+//Напишите программу, которая будет выводить в консоль сообщения пользователя, введенные через prompt, пока пользователь не введет 
+//break. Если пользователь введёт в prompt continue, то в консоль ничего не нужно выводить, а пользователь должен продолжить вводить сообщения.
 
 
-// Block_2_HW_3-------------------------------------------------------------------------
-
-// //Задание 1
-
-// let password = 'пароль';
-// let message = prompt('Введите пароль');
-// if (message === password) {
-// console.log('Пароль введен верно.');}
-// else {console.log('Пароль введен неправильно');} 
-
-//Задание 2
-
-// let c = Number(prompt('Введите число'));
-// if (c>0 && c<10) {console.log('Верно');}
-// else {console.log('Не верно');}
-
-//Задание 3
-
-// let d = prompt('Введите первое число (e)');
-// let e = prompt('Введите первое число (d)');
-
-// if (d > 100 || e > 100) {console.log('Верно');}
-// else {console.log('Не верно');}
-
-//Задание 4
-
-// let a = '2';
-// let b = '3';
-// // Код выше изменять менять нельзя, чтобы решить задачу исправьте код ниже: 
-// alert(Number(a) + Number(b));
-
-//Задание 5
-// let MonthNumber = Number(prompt('Введите номер месяца в году.'));
-// if (MonthNumber > 0 && MonthNumber < 13) {
-// switch (MonthNumber) 
-// {case 1 : console.log('Январь');
-// break;
-
-// case 2 : console.log('Февраль');
-// break;
-
-// case 3 : console.log('Март');
-// break;
-
-// case 4 : console.log('Апрель');
-// break;
-
-// case 5 : console.log('Май');
-// break;
-
-// case 6 : console.log('Июнь');
-// break;
-
-// case 7 : console.log('Июль');
-// break;
-
-// case 8 : console.log('Август');
-// break;
-
-// case 9 : console.log('Сентябрь');
-// break;
-
-// case 10 : console.log('Октябрь');
-// break;
-
-// case 11 : console.log('Ноябрь');
-// break;
-
-// case 12 : console.log('Декабрь');
-// break;
+// while(true) {
+//     const msg = prompt('Введите Ваше сообщение');
+    
+//     if (msg === 'continue') 
+//     {
+//    continue
+//        }
+//        console.log(msg);
+// if (msg === 'break') {
+// break
 // }
 // }
-// else alert('Чепуха');
-
-

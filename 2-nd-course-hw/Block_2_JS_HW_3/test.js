@@ -23,52 +23,37 @@ let e = prompt('Введите первое число (d)');
 if (d > 100 || e > 100) {console.log('Верно');}
 else {console.log('Не верно');}
 
-//Задание 4
+// //Задание 4
 
-let a = '2';
-let b = '3';
-// Код выше изменять менять нельзя, чтобы решить задачу исправьте код ниже: 
-alert(Number(a) + Number(b));
+// let a = '2';
+// let b = '3';
+// // Код выше изменять менять нельзя, чтобы решить задачу исправьте код ниже: 
+// alert(Number(a) + Number(b));
 
 //Задание 5
 let MonthNumber = Number(prompt('Введите номер месяца в году.'));
 if (MonthNumber > 0 && MonthNumber < 13) {
 switch (MonthNumber) 
-{case 1 : console.log('Январь');
+{case 12: 
+    case 12:
+        case 2: console.log('Зима');
 break;
 
-case 2 : console.log('Февраль');
+case 3: 
+    case 4:
+        case 5: console.log('Весна');
 break;
 
-case 3 : console.log('Март');
+case 6: 
+    case 7:
+        case 8: console.log('Лето');
 break;
 
-case 4 : console.log('Апрель');
+case 9: 
+    case 10:
+        case 11: console.log('ОСень');
 break;
 
-case 5 : console.log('Май');
-break;
-
-case 6 : console.log('Июнь');
-break;
-
-case 7 : console.log('Июль');
-break;
-
-case 8 : console.log('Август');
-break;
-
-case 9 : console.log('Сентябрь');
-break;
-
-case 10 : console.log('Октябрь');
-break;
-
-case 11 : console.log('Ноябрь');
-break;
-
-case 12 : console.log('Декабрь');
-break;
 }
 }
 else alert('Чепуха');
