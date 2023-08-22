@@ -1,6 +1,69 @@
 /*# sourceMappingURL=style.css.map */
 
+
 @charset "UTF-8";
+
+@-webkit-keyframes wobble-hor-top {
+  0%,
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+  }
+  15% {
+    -webkit-transform: translateX(-30px) rotate(6deg);
+            transform: translateX(-30px) rotate(6deg);
+  }
+  30% {
+    -webkit-transform: translateX(15px) rotate(-6deg);
+            transform: translateX(15px) rotate(-6deg);
+  }
+  45% {
+    -webkit-transform: translateX(-15px) rotate(3.6deg);
+            transform: translateX(-15px) rotate(3.6deg);
+  }
+  60% {
+    -webkit-transform: translateX(9px) rotate(-2.4deg);
+            transform: translateX(9px) rotate(-2.4deg);
+  }
+  75% {
+    -webkit-transform: translateX(-6px) rotate(1.2deg);
+            transform: translateX(-6px) rotate(1.2deg);
+  }
+}
+@keyframes wobble-hor-top {
+  0%,
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+  }
+  15% {
+    -webkit-transform: translateX(-30px) rotate(6deg);
+            transform: translateX(-30px) rotate(6deg);
+  }
+  30% {
+    -webkit-transform: translateX(15px) rotate(-6deg);
+            transform: translateX(15px) rotate(-6deg);
+  }
+  45% {
+    -webkit-transform: translateX(-15px) rotate(3.6deg);
+            transform: translateX(-15px) rotate(3.6deg);
+  }
+  60% {
+    -webkit-transform: translateX(9px) rotate(-2.4deg);
+            transform: translateX(9px) rotate(-2.4deg);
+  }
+  75% {
+    -webkit-transform: translateX(-6px) rotate(1.2deg);
+            transform: translateX(-6px) rotate(1.2deg);
+  }
+}
+
+
+
 * {
   margin: 0;
   padding: 0;
@@ -15,13 +78,21 @@ body {
   padding-right: calc(50% - 600px);
 }
 
-.heading {
+.top {
+    /* width: 1440px; */
     height: 1024px;
+    flex-shrink: 0;
     background-image: url(img/main/Rectangle1.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    margin-bottom: -2px;
+
     
+}
+
+.top-content {
+    margin-bottom: 493px;
 }
 
     .top-content__title {
@@ -30,6 +101,7 @@ body {
         color: #FFF;
         font-size: 64px;
         font-weight: 700;
+        
     }
     .top-content__text {
     margin-top: 32px;
@@ -40,6 +112,7 @@ body {
         font-weight: 300;
         
     }
+    
 
     .top-content__text--bold {
         color: #FFF;
@@ -58,56 +131,149 @@ body {
         color: #FFF;
         font-size: 18px;
         font-weight: 400;
+        -webkit-animation: wobble-hor-top 0.8s steps(2, end) 2s 3 both;
+	        animation: wobble-hor-top 0.8s steps(2, end) 2s 3 both;
 
     }
+
+     .top-content__podpiska:hover {
+  transform: scale(1.5);
+  box-shadow: 0 0 5px #ccc;
+}
  
 
-.games {
-    /* height: 556px;
-    background-color: #000915;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: center;
-    row-gap: 32px;
-    box-sizing: border-box;
-    margin-bottom: 128px; */
+.games-wrap {
     background-color: #000915;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 556px;
-    display: flex;
-    grid-column: span 4;
-    gap: 32px;
+    padding-top: 128px;
+    padding-bottom: 128px;
+
+       display: flex;
+        column-gap: 32px;
+
+        box-sizing: border-box;
+        justify-content: center;
+}
+    /* .games-content {
+        display: flex;
+        column-gap: 32px;
+           } */
 
 
-  }
+  
 
-  .game {
-    width: 379px;
-    height: 300px;
+  .games-content__game {
+    /* width: 379px; */
+    /* height: 556px; */
     border-radius: 16px;
     /* margin-left: 120px; */
-  }
-
-  .game-1 {
-    background-image: url(img/main/Igra1.png);
-    background-repeat: no-repeat;
     font-weight: 600;
     line-height: 32px; 
     width: 379px;
-height: 300px;
+    height: 300px;
+    position: relative;
   }
 
-  .game-1__text {
+
+  .game__text {
     color: #FFF;
     font-size: 24px;
     font-weight: 600;
     line-height: 32px; 
-    margin-top: 236px;
-    margin-left: 32px;
+    position: absolute;
+    bottom: 32px;
+    left: 32px;
   }
+      .game__img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 16px #000000;
+}
+
+
+  @media (min-width: 320px) and (max-width: 767px) {
+
+    .center {
+        padding-left: 16px;
+        padding-right: 16px;
+        box-sizing: border-box;
+      }
+    
+    .top {
+        /* width: auto; */
+        height: 735px;
+        background: url(img/main/Fon_mob_1.png);
+        background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    }
+
+    .top-content {
+        margin-bottom: 238px;
+        
+    }
+
+    .top-content__title {
+            color: #FFF;
+            font-size: 32px;
+            font-weight: 700;
+            
+            text-align: center;
+            padding-top: 238px;
+            
+        }
+        .top-content__text {
+        color: #FFF;
+        font-size: 14px;
+        font-weight: 300;
+
+        text-align: center;
+        margin-bottom: 32px;
+                
+            }
+    
+        top-content__text--bold {
+           
+            font-size: 14px;
+            
+            }
+
+    .top-content__podpiska {   
+        margin-left: 70px;
+        margin-bottom: 493px;
+                }
+        
+    .games-wrap {
+        height: 1221px;
+        display: flex;
+        column-gap: 32px;
+        box-sizing: border-box;
+        justify-content: center;
+        flex-direction: column;
+        row-gap: 32px;
+
+                }
+
+     .game__img {
+        width: 343px;
+        height: 300px;
+      } 
+      .game__img:hover {
+  transform: scale(1.5);
+  box-shadow: 0 0 5px #ccc;
+}
+    
+      .game__text {
+        color: #FFF;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 32px; 
+        margin-top: 236px;
+        margin-left: 32px;
+      }
+    
+ }
+
+
