@@ -169,7 +169,7 @@
 
 let i = 1;
 let ne = 2;
-while (i<=n) {
+while (i<=ne) {
     console.log('Привет');
     i++
 }
