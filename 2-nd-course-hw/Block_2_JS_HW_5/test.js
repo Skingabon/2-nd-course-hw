@@ -1,76 +1,144 @@
 
-// Block_2_HW_3-------------------------------------------------------------------------
+// Block_2_HW_4-------------------------------------------------------------------------
 
-// //Задание 1
+// //Задание 1 
+// //Напишите функцию, которая возвращает меньшее из 2 чисел. Например, из двух чисел — 8 и 4 — функция должна вернуть 4. Если передадим 6 и 6, то функция должна вернуть 6.
 
-let password = 'пароль';
-let message = prompt('Введите пароль');
-if (message === password) {
-console.log('Пароль введен верно.');}
-else {console.log('Пароль введен неправильно');} 
+let num1 = prompt('Введите 1-e число.');
+let num2 = prompt('Введите 2-e число.');
 
-//Задание 2
+const littleNum = function () {
+    
+    return num1 < num2 ? alert(num1) : alert(num2);
+}
 
-let c = Number(prompt('Введите число'));
-if (c>0 && c<10) {console.log('Верно');}
-else {console.log('Не верно');}
+littleNum();
+
+// //Задание 2
+// //Напишите функцию, которая принимает число, а возвращает строку 'Число четное', если число четное, 'Число нечетное' — если нечетное.
+let num = prompt('Введите 1-e число.');
+
+const strNum = function () {
+    
+    return num % 2==0 ? alert('Число четное') : alert('Число не четное') ;
+}
+
+strNum();
 
 //Задание 3
+// 3.1. Напишите функцию, которая принимает параметром число и выводит в консоль квадрат этого числа.
 
-let d = prompt('Введите первое число (e)');
-let e = prompt('Введите первое число (d)');
+//Способ 1
+const stepenNum = (num) => {
+    let result = num ** 2;
+    console.log(result);
+}
+stepenNum(3);
 
-if (d > 100 || e > 100) {console.log('Верно');}
-else {console.log('Не верно');}
+//Способ 2
+const stepenNum = () => {
+    num = Number(prompt("Введите число."));
+    let result = num ** 2;
+    console.log(result);
+}
+stepenNum();
+
+// 3.2. Напишите функцию, которая принимает параметром число и возвращает квадрат этого числа.
+function stepenNum() {
+    let num = Number(prompt("Введите число."));
+    console.log(num ** 2);
+    return;
+}
+stepenNum();
 
 //Задание 4
+// Создайте функцию, которая:
+// Спрашивает у пользователя, сколько ему лет.
+// Если пользователь вводит отрицательное число, выводит на экран «Вы ввели неправильное значение».
+// Если пользователь введет число от 0 до 12, выводит на экран «Привет, друг!».
+// Если пользователь введет число больше или равно 13, выводит на экран «Добро пожаловать!».
 
-let a = '2';
-let b = '3';
-// Код выше изменять менять нельзя, чтобы решить задачу исправьте код ниже: 
-alert(Number(a) + Number(b));
+function question() {
+    let year = Number(prompt("Сколько Вам годков?"));
+    if (year > 0 && year <= 12) {alert('ПРивет друг.');}
+    else if (year >= 13) {alert('Добро пожаловать.');}
+    else {alert('Вы ввели неправильное значение.');}
+        return;
+    }
+    question();
 
-//Задание 5
-let MonthNumber = Number(prompt('Введите номер месяца в году.'));
-if (MonthNumber > 0 && MonthNumber < 13) {
-switch (MonthNumber) 
-{case 1 : console.log('Январь');
-break;
+// //Задание 5
+//Напишите функцию, которая на вход принимает 2 числа:
+// Проверяет, являются ли переданные параметры корректными числами. (Преобразование типов и isNaN() помогут.)
+//     Если нет, то вернуть строку 'Одно или оба значения не являются числом'.
+//     Если оба параметра — числа, то вернуть произведение данных чисел.
+    function mult() {
+        num1 = prompt("Введите 1e число.");
+        num2 = prompt("Введите 2e число.");
+        
+        if (isNaN(num1) || isNaN(num2)) {
+         alert('Одно или оба значения не являются числом.');
+        }
+            else  {
+                return alert(num1 * num2);
+            }
+        }
+        mult();
 
-case 2 : console.log('Февраль');
-break;
+// // Задание 6
 
-case 3 : console.log('Март');
-break;
 
-case 4 : console.log('Апрель');
-break;
-
-case 5 : console.log('Май');
-break;
-
-case 6 : console.log('Июнь');
-break;
-
-case 7 : console.log('Июль');
-break;
-
-case 8 : console.log('Август');
-break;
-
-case 9 : console.log('Сентябрь');
-break;
-
-case 10 : console.log('Октябрь');
-break;
-
-case 11 : console.log('Ноябрь');
-break;
-
-case 12 : console.log('Декабрь');
-break;
+const checkNumber = () => {
+    let number = Number(prompt("Введите число."));
+     if (isNaN(number)) {
+        alert('Переданный параметр не является числом.');
+     } else {
+        let mathOperation = number ** 3;
+        return console.log(`${number} в кубе равняется ${mathOperation}`);
+     }
 }
-}
-else alert('Чепуха');
 
+checkNumber();
 
+// //Задание 7
+// // //Создайте объекты circle1 и circle2 со свойством 
+// radius
+// . У объектов должен быть методам 
+// getArea
+//  , которое возвращает площадь круга через радиус, а также 
+// getPerimeter
+//  , который возвращает периметр окружности.
+
+const cicle1 = {
+    radius: 4,
+    getArea() { 
+        let mathRadius = 3.1415926536 * cicle1.radius;
+         return mathRadius; 
+        },
+    getPerimeter() {
+        let mathPerimeter = 2 * cicle1.radius * 3.1415926536;
+         return mathPerimeter; 
+        }
+    }
+    
+    const cicle2 = {
+        radius: 8,
+        getArea() { 
+            let mathRadius = 3.1415926536 * cicle2.radius;
+             return mathRadius; 
+            },
+        getPerimeter() {
+            let mathPerimeter = 2 * cicle2.radius * 3.1415926536;
+             return mathPerimeter; 
+            }
+        }
+    
+        console.log(cicle1.getArea());
+        console.log(cicle1.getPerimeter());
+    
+        console.log(cicle2.getArea());
+        console.log(cicle2.getPerimeter());
+    
+    
+    
+    
