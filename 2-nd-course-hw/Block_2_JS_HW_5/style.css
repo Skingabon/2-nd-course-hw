@@ -133,7 +133,7 @@ body {
 }
 
 .game__img:hover {
-  transform: scale(1.1);
+  transform: scale(1.01);
   box-shadow: 0 0 16px #000000;
 }
 
@@ -190,8 +190,8 @@ body {
     height: 300px;
   }
   .game__img:hover {
-    transform: scale(1.5);
-    box-shadow: 0 0 5px #ccc;
+    transform: scale(1.002);
+    box-shadow: 0 0 15px #ccc;
   }
   .game__text {
     color: #FFF;
@@ -201,5 +201,4 @@ body {
     margin-top: 236px;
     margin-left: 32px;
   }
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
