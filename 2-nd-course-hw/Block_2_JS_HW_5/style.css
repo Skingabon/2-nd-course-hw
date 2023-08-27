@@ -190,8 +190,8 @@ body {
     height: 300px;
   }
   .game__img:hover {
-    transform: scale(1.002);
-    box-shadow: 0 0 15px #ccc;
+    transform: scale(1.1);
+    box-shadow: 0 0 16px #000000;
   }
   .game__text {
     color: #FFF;
