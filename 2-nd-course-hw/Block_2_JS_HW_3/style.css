@@ -1,1 +1,6 @@
-@im;/*# sourceMappingURL=style.css.map */
+@media (max-width: 767px) {
+  .center {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}/*# sourceMappingURL=style.css.map */

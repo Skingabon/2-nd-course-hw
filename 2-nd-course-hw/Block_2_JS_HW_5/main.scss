@@ -179,7 +179,7 @@ body {
 
   .game__text {
     color: #FFF;
-    font-size: 24px;
+    font-size: 124px;
     font-weight: 600;
     line-height: 32px; 
     position: absolute;
@@ -187,6 +187,6 @@ body {
     left: 32px;
   }
       .game__img:hover {
-  transform: scale(1.1);
+  transform: scale(1.01);
   box-shadow: 0 0 16px #000000;
 }
