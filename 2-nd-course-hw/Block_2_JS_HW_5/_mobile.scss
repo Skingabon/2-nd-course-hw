@@ -75,6 +75,7 @@
     .footer-content {
         display: flex;
         flex-direction: row;
+        gap: 0px;
     }
     .footer-content__play {
         display: inline-flex;
@@ -98,5 +99,10 @@
         width: 344px;
         height: 236px;
         flex-shrink: 0;
+        margin-top: -185px;
+        &__img {
+            width: 344px;
+            height: 236px
+        }
     }
 }

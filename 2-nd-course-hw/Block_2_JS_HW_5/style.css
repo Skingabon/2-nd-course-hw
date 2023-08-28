@@ -256,6 +256,7 @@ body {
   .footer-content {
     display: flex;
     flex-direction: row;
+    gap: 0px;
   }
   .footer-content__play {
     display: inline-flex;
@@ -278,5 +279,10 @@ body {
     width: 344px;
     height: 236px;
     flex-shrink: 0;
+    margin-top: -185px;
+  }
+  .footer-game__img {
+    width: 344px;
+    height: 236px;
   }
 }/*# sourceMappingURL=style.css.map */
