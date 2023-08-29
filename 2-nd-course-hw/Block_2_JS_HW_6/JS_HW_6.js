@@ -202,20 +202,17 @@
 // //Zadacha 4-------------------------------------
 //// С помощью вложенных циклов создайте многомерный массив вида: [[1, 1, 1], [1, 1, 1], [1, 1, 1]]
 
-let arr = [];
-    arr[0] = [];
-    arr[1] = [];
-    arr[2] = [];
-for (let i = 1; arr.length <= 3; i++){
-    arr[i].unshift(1);
-}
-// arr = arr.concat([2, 2, 2]);
-console.log(arr);
+// let arr = [];
+//     let num = 1;
+// for (let i = 0; i < 3; i++){
+//     arr[i] = [];
+//     for (let j = 0; j < 3 ; j++) {
+//         arr[i].push(num);
 
-
-
-// let arr = [[1, 3, 7], [5, 10, 6], [7, 20, 4]];
+//     }
+// }
 // console.log(arr);
+
 
 // //Zadacha 5-------------------------------------
 // Дан массив: [1, 1, 1]
@@ -257,3 +254,44 @@ console.log(arr);
 //     if (ok == num) {
 //         alert('Надо же, Вы угадали!');
 //     } else {alert('Повезет другому.')};
+
+// //Zadacha 8
+//// Дана строка: 'abcdef'
+//// Необходимо, чтобы программа вывела в консоль 'fedcba'
+// const str = "abcdef";
+// const reverse = str.split('').reverse().join('');
+// console.log(reverse);
+
+
+// //Trening 7
+// let word = 'привет=как=дела'; 
+// word = word.split('=');
+// console.log(word); // ['привет', 'как', 'дела']
+
+// word = word.sort();
+// console.log(word); // ['дела', 'как', 'привет']
+
+// word = word.join(' ');
+// console.log(word); // дела как привет
+
+
+// //Zadacha 9
+//// Дан массив: [[1, 2, 3,],[4, 5, 6]]
+//// Выведите в консоль массив вида: 
+//// [1, 2, 3, 4, 5, 6]
+
+// let arr = [[1, 2, 3],[4, 5, 6]];
+// // console.log(arr);
+// const all = arr.flat(1);
+// console.log(all);
+
+// //Zadacha 10
+//// Создайте массив с произвольными числами (диапазон от 1 до 10). Переберите его с помощью цикла for и в каждой итерации выведите в консоль сумму текущего и следующего элементов массива.Следующий элемент массива можно получить с помощью индекса: i + 1. Обратите внимание, что у последнего элемента нет следующего.
+
+// const arr = [1, 2, 4, 3, 7, 6, 9, 8, 10, 5];
+// const result = arr.reduce((intermediate, value => intermediate + value));
+// console.log(result);
+
+const arr = [1, 2, 3, 4];
+const result = arr.reduce((intermediate, value => intermediate + value));
+console.log(result);
