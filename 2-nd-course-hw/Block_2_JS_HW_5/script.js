@@ -30,7 +30,20 @@ function myFunction() {
 // }}} 
 //---------------------------------------------
 let monthYear = Number(prompt('Угадай в каком по счету месяце зима.'));
-while(true) {
+// while(true) {
+//     if (monthYear >=1 && monthYear <=2 || monthYear ===12) 
+//         {return alert('Ты совершенно прав. Это - Зима');}
+//     else if (monthYear >=3 && monthYear <=5)
+//         {return alert('Подумай лучше, это же Весна');}
+//     else if (monthYear >=6 && monthYear <=8)
+//         {return alert('Подумай лучше, это же Лето');}
+//     else if (monthYear >=9 && monthYear <=11)
+//         {return alert('Подумай лучше, это же Осень');}
+//     else if (monthYear <= 0 || monthYear > 12)
+//         {return alert('Тут тебе не шутки шутят. Лови синий экран. Хотел наложить на страницу синий фон но не знаю как=))');}
+// }
+
+
     if (monthYear >=1 && monthYear <=2 || monthYear ===12) 
         {return alert('Ты совершенно прав. Это - Зима');}
     else if (monthYear >=3 && monthYear <=5)
@@ -39,13 +52,10 @@ while(true) {
         {return alert('Подумай лучше, это же Лето');}
     else if (monthYear >=9 && monthYear <=11)
         {return alert('Подумай лучше, это же Осень');}
-    else if (monthYear <= 0 || monthYear > 12)
-        {return alert('Тут тебе не шутки шутят. Лови синий экран. Хотел наложить на страницу синий фон но не знаю как=))');}
-
-
-}
-
-}
+    else if (isNaN(monthYear) || monthYear <= 0 || monthYear > 12) {
+        {return alert('Тут тебе не шутки шутят. Лови синий экран. Хотел наложить на страницу синий фон, но не знаю как=))');}
+         }
+    }
 
 
 
