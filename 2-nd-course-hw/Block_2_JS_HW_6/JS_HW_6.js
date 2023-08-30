@@ -171,7 +171,13 @@ function filterPositive(array) {
 // }
 // console.log(result);
 
+////------------------2 вариант которого нет в теории домашки
+// function filterPositive(array) { 
+//     return array.filter(el => el < 0);
+// }
 
+////------------------3 вариант которого нет в теории домашки
+// const filterPositive = (array) => array.filter(el => el < 0);
 
 
 
