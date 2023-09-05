@@ -51,14 +51,21 @@ while(true) {
 
 
 
-// myFunction();
+function FunctionGame2() {
+let newMass = ['Яблоко', 'Груша', 'Дыня', 'Виноград', 'Персик', 'Апельсин', 'Мандарин'];
+newMass = newMass.sort(() => Math.random() - 0.5);
+alert(newMass);
+    console.log(newMass);
+    //console.log(newMass[0]);
+let elFirst = prompt('Чему равняется первыйй элемент массива?')
+let elFinish = prompt('Чему равняется последний элемент массива?')
 
-// function myFunction() {
-// const numbs = [2, 4, 5, 6, 8];
+if (newMass[0].toLowerCase() == elFirst.toLowerCase() && newMass[6].toLowerCase() == elFinish.toLowerCase()) {
+    return alert('Поздравляем. Вы угадали оба элемента.');
+}
+    if (newMass[0].toLowerCase() !== elFirst.toLowerCase() && newMass[6].toLowerCase() !== elFinish.toLowerCase()) {
+        return alert('Вы ответили не верно.');
+    }
+    else {return alert('Вы были близки к победе!');}
 
-// numbs.forEach((el) => {
-// 	console.log(el);
-// });
-// alert(el);
-// }
-// myFunction();
+}
