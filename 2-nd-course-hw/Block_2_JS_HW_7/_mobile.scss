@@ -1,0 +1,108 @@
+@media (min-width: 320px) and (max-width: 767px) {
+    .center {
+        padding-left: 16px;
+        padding-right: 16px;
+        box-sizing: border-box;
+    }
+
+    .top {
+        /* width: auto; */
+        height: 735px;
+        background: url(img/main/Fon_mob_1.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .top-content {
+        margin-bottom: 238px;
+    }
+
+    .top-content__title {
+        color: #fff;
+        font-size: 32px;
+        font-weight: 700;
+
+        text-align: center;
+        padding-top: 238px;
+    }
+    .top-content__text {
+        color: #fff;
+        font-size: 14px;
+        font-weight: 300;
+
+        text-align: center;
+        margin-bottom: 32px;
+    }
+
+    top-content__text--bold {
+        font-size: 14px;
+    }
+
+    .top-content__podpiska {
+        margin-left: 70px;
+        margin-bottom: 493px;
+    }
+
+    .games-wrap {
+        height: 1221px;
+        display: flex;
+        column-gap: 32px;
+        box-sizing: border-box;
+        justify-content: center;
+        flex-direction: column;
+        row-gap: 32px;
+    }
+
+    .game__img {
+        width: 343px;
+        height: 300px;
+    }
+    .game__img:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 16px #000000;
+    }
+
+    .game__text {
+        color: #fff;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 32px;
+        margin-top: 236px;
+        margin-left: 32px;
+    }
+
+    .footer-content {
+        display: flex;
+        flex-direction: row;
+        gap: 0px;
+    }
+    .footer-content__play {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        margin-top: 51px;
+    }
+    .footer-content__play-title {
+        color: #fff;
+        font-size: 32px;
+        font-weight: 700;
+    }
+    .footer-content__play-info {
+        color: #fff;
+        font-size: 14px;
+        font-weight: 300;
+    }
+
+    .footer-game {
+        width: 344px;
+        height: 236px;
+        flex-shrink: 0;
+        margin-top: -185px;
+        &__img {
+            width: 344px;
+            height: 236px
+        }
+    }
+}
