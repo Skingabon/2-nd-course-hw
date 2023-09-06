@@ -149,9 +149,9 @@
 //         // //Zadacha 5
 //         // Создайте функцию, которая будет выводить в консоль рандомное число от 1 до 10.
 // function num(numMin, numMax) {
-//     return Math.round(Math.random() * (numMax - numMin)) + numMin;
-// }
-// num(1, 10);
+//         return Math.round(Math.random() * (numMax - numMin)) + numMin;
+//     }
+//     console.log(num(1, 10));
 
 //         // //Zadacha 6 --------------------------------------------
 //         // Напишите функцию, которая будет принимать на вход целое число, а возвращать массив случайных         целых чисел от 0 до переданного числа. Длина массива должна быть в 2 раза меньше переданного числа.
@@ -169,11 +169,11 @@
 
 
 //         // //Zadacha 7
-//         // Создайте функцию, которая будет выводить в консоль рандомное число от 1 до 10.
+//         // Напишите функцию, которая на вход принимает 2 целых числа, а в качестве результата возвращает случайное целое число в этом  диапазоне.
 // function num(numMin, numMax) {
-//     return Math.round(Math.random() * numMax);
-// }
-// num(1, 10);
+//         return Math.round(Math.random() * (numMax - numMin)) + numMin;
+//     }
+//     num(5, 15);
 
 //         // //Zadacha 8
 //         // Выведите в консоль текущую дату в стандартном режиме. Используйте один из трех рассмотренных в уроке способов.
@@ -196,23 +196,29 @@
 // let next73 = new Date(serchDate);
 // console.log(next73);
 
-//             // //Zadacha 8
+                ////Вариант 2
+// let currentDate = new Date();
+// currentDate.setDate(currentDate.getDate()+73);
+// console.log(currentDate);
+
+
+//             // //Zadacha 10
 //             // Написать функцию, которая на вход принимает дату, а возвращает ее отображение в виде:
 //             // Дата: <число> <месяц на русском> <год> - это <день недели на русском>.
 //             /* Время: <часы>:<минуты>:<секунды> */
 //             /* Время, которое будет выведено, также хранится в объекте Date. */
 
 
-// function convertformat(){
-// const days = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
-// const months = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
-// let curr_dt = new Date()
-// let form_dt = "<" + curr_dt.getDate() +"> " + "<" + months[curr_dt.getMonth()] + "> " + "<" +curr_dt.getFullYear() +"> " + "- " + "это " + "<" + days[curr_dt.getDay() + ">"];
-// let form_tm = "<" + curr_dt.getHours() + ">:<" + curr_dt.getMinutes()+">:<" + curr_dtgetSeconds() +">";
-// return [form_dt, form_tm];
+function convertformat(){
+const days = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
+const months = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
+let curr_dt = new Date()
+let form_dt = "<" + curr_dt.getDate() +"> " + "<" + months[curr_dt.getMonth()] + "> " + "<" +curr_dt.getFullYear() +"> " + "- " + "это "+ "<" + days[curr_dt.getDay()] + ">";
+let form_tm = "<" + curr_dt.getHours() + ">:<" + curr_dt.getMinutes()+">:<" + curr_dt.getSeconds() +">";
+return [`${form_dt}, Время: ${form_tm}`];
 
-//   }
-// //console.log(`Дата: ${convertformat()}`); -- как тут выводить form_dt не знаю
-// //console.log(`Время: ${convertformat.form_tm()}`); а тут form_tm
+  }
+console.log(`Дата: ${convertformat()}`); 
+
 
 // ///////////////////////////////////---------7 урок КОНЕЦ-----------///////////////////////////
