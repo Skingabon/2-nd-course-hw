@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок "Управление HTML содержимым из JS"</title>
+</head>
+<body>
+<h1 id =zagolovok>Любимые цвета студентов</h1>
+
+<ul id="list">
+    <li>Глеб, любимый цвет <span style ="color: #ff2600">#ff2600</span></li>
+    <li>Иван, любимый цвет <span style ="color: #00f900">#00f900</span></li>
+    <li>Люси, любимый цвет <span style ="color: #0432ff">#0432ff</span></li>
+</ul>
+<div>
+    <h3>Форма добавления</h3>
+    Имя:
+    <input type="text" id = "name-input" value="Глеб">
+    <br /><br />
+    Цвет:
+    <input type="color" id = "color-input">
+    <br /><br />
+    <button id="add-button">Добавить</button>
+</div>
+<br />
+<div>
+    <h3>Форма удаления</h3>
+<button>Удалить <span style ="color: #ff2600">#ff2600</span></button>
+</div>
+</body>
+<style>
+    .error {
+        background-color: red;
+    }
+    .zagolovok {
+        color: red;
+    }
+</style>
+<script>
+
+
+
+
+    const buttonElement = document.getElementById('add-button');
+    const listElement = document.getElementById('list');
+    const nameInputElement = document.getElementById('name-input');
+    nameInputElement.placeholder = "Введите имя тут";
+    const colorInputElement = document.getElementById('color-input')
+    const zagolovokInputElement = document.getElementById('zagolovok')
+
+    //zagolovokInputElement.style.color = "red";
+    zagolovokInputElement.classList.add("zagolovok");
+    
+    //console.log(listElement.innerHTML);
+
+    buttonElement.addEventListener('click', () => { 
+
+
+            //nameInputElement.style.backgroundColor = ""; ниже через стили сделал
+        nameInputElement.classList.remove("error");
+        if (nameInputElement.value === "") {
+            //nameInputElement.style.backgroundColor = "red";  ниже через стили сделал
+        nameInputElement.classList.add("error");
+            return;
+        }
+        //alert('Меня нажали');
+        //console.log(colorInputElement.value);
+
+        const oldListHTML = listElement.innerHTML;
+        listElement.innerHTML = oldListHTML + 
+        `<li>
+           ${nameInputElement.value}, любимый цвет <span style ="color: ${colorInputElement.value}">${colorInputElement.value}</span>
+        </li>`;
+        //buttonElement.disabled = true;
+        nameInputElement.value = "";
+    })
+</script>
+</html>
