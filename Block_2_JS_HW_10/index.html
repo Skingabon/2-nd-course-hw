@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Урок "Динамические обработчики событий и всплытие"</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <h1>Любимые цвета студентов</h1>
+  <ul class="students" id="list">
+    <!-- Список лишек всех рендерится из Java Script стр. 100-128 -->
+    <!-- <li class="student" data-color="ff2600" data-name="Глеб">
+      <p class="student-name">
+        Глеб, любимый цвет
+        <span style="color: #ff2600;">#ff2600</span>
+      </p>
+      <button class="buttonHiClass" id="buttonHi" data-name="Глеб">Приветствовать</button>
+      <button class="delete-button">Удалить</button>
+    </li>
+
+    <li class="student" data-color="00f900" data-name="Иван">
+      <p class="student-name">
+        Иван, любимый цвет
+        <span style="color: #00f900;">#00f900</span>
+      </p>
+      <button class="buttonHiClass" id="buttonHi" data-name="Иван">Приветствовать</button>
+      <button class="delete-button">Удалить</button>
+    </li>
+
+    <li class="student" data-color="#0432ff" data-name="Люси"> -->
+      <!-- <p class="student-name">
+        Люси, любимый цвет
+        <span style="color: #0432ff;"> #0432ff</span>
+      </p>
+       <input type="button" id="buttonHi" class="buttonHiClass" data-name="Люси" value="Приветствовать">
+      <button class="buttonHiClass" id="buttonHi" data-name="Люси">Приветствовать</button>
+      <button class="delete-button">Удалить</button>
+    </li> -->
+
+  </ul>
+
+  <div class="form">
+    <h3 class="form-title">Форма добавления</h3>
+    <div class="form-row">
+      Имя:&nbsp;&nbsp;
+      <input type="text" id="name-input" class="input" placeholder="Василий" />
+    </div>
+    <div class="form-row">
+      Цвет:&nbsp;
+      <input type="color" id="color-input" class="color-input input" />
+      <br /><br />
+    </div>
+    <button class="button" id="add-button">Добавить</button>
+  </div>
+
+
+</body>
+
+<script>
+
+
+  const buttonElement = document.getElementById("add-button");
+  const listElement = document.getElementById("list");
+  const nameInputElement = document.getElementById("name-input");
+  const colorInputElement = document.getElementById("color-input");
+  const bodyElement = document.body;
+
+
+  //Добавляет обработчики элементов кликов ко всем элементам с классом student
+  const eventListener = () => {
+    //Находит все элементы с классом student в разметке
+    const eventStudents = document.querySelectorAll('.student');
+    //Цикл for проходит по каждому элементу в списке
+    for (const eventStudent of eventStudents) {
+      //Добавляет обработчик клика на конкретный элемент в списке
+      eventStudent.addEventListener('click', () => {
+        //console.log(eventStudent.dataset.name);
+        //console.log(eventStudent.dataset.color);
+        if (eventStudent.dataset.color.value = "#ff2600") {
+            console.log(eventStudent.innerHTML);
+        }
+      })
+    }
+  }
+
+  const initRemoveNameButtonListeners = () => {
+    const RemoveNameButtonElements = document.querySelectorAll('.button-removeNameClass');
+        for (const RemoveNameButtonElement of RemoveNameButtonElements) {
+RemoveNameButtonElement.addEventListener ('click', () => {
+// const indexRemoveNameButton = RemoveNameButtonElement.dataset.index1;
+         console.log(RemoveNameButtonElement.value);
+
+      })
+
+    }
+  }
+
+  const initDeleteButtonsListeners = () => {
+    const deleteButtonElements = document.querySelectorAll('.delete-button');
+    for (const deleteButtonElement of deleteButtonElements) {
+      deleteButtonElement.addEventListener('click', () => {
+        //После добавления в функцию MAP рендер функции на 121 строке 2-го атрибута элемента массива - index. Добавляю сюда переменную с указанием на этот индекс
+        const index = deleteButtonElement.dataset.index;
+        console.log(index);
+        students.splice(index, 1);
+        //Вызываю рендер функцию, чтобы новую разметку для новых данных сформировать
+        renderStudents();
+        //План удаления:
+        //1. Мы храним список студентов в js массиве
+        //2. При клике мы удаляем нужный элемент из массива
+        //3. На основе нового массива в js формируем html разметку списка
+      })
+    }
+  }
+
+  const students = [
+    {
+      name: "Глеб",
+      color: "#ff2600",
+      isLover: true,
+    },
+    {
+      name:"Иван",
+      color:"#00f900",
+      isLover: true,
+    },
+    {
+      name:"Люси",
+      color:"#0432ff",
+      isLover: false,
+    }
+  ];
+
+
+
+  const renderStudents = () => {
+    // добавляем в функцию MAP 2й атрибут - index элемента в массиве
+    const studentsHTML = students.map((student, index) => {
+      return `<li class="student" data-color="${student.color}" data-name="${student.name}">
+            <p class="student-name">
+              ${student.name}, любимый цвет
+              <span style="color: ${student.color}"> ${student.color}</span>
+            </p>
+            <button class="buttonHiClass" id="buttonHi" data-name="Люси">Приветствовать</button>
+        <button data-index="${index}" class="delete-button">Удалить</button>
+        <button data-index1="${index}" class="button-removeNameClass" id="button-removeName">Стереть имя</button>
+          </li>`;
+    }).join("");
+  listElement.innerHTML = studentsHTML;
+  eventListener();
+  initDeleteButtonsListeners();
+  };
+  
+  renderStudents();
+
+  //Поскольку подписываться на события нам нужно всегда после нового рендера, НУЖНО инициализацию событий стр. 73 и стр.87 перенести в конец рендера 
+      // eventListener();
+      // initDeleteButtonsListeners();
+
+
+
+
+  buttonElement.addEventListener("click", () => {
+    nameInputElement.classList.remove("input-error");
+    bodyElement.classList.remove("error-fon");
+
+    if (nameInputElement.value === "") {
+      bodyElement.classList.add("error-fon");
+      // document.body.style.backgroundColor = "red";
+
+      //nameInputElement.classList.add("input-error");
+      return;
+    }
+
+//Добавляем в массив students данные / Рашьше добавляли строкой innerHTML  код стр.169-178. Но теперь есть переменная с массивом, который обрабатывает рендер. Поэтому можно проще добавлять данные - строки 156-165 не нужны 
+    students.push({
+      name: nameInputElement.value,
+      color: colorInputElement.value,
+    });
+
+    // listElement.innerHTML =
+    //   listElement.innerHTML +
+    //   `<li class="student" data-color="${colorInputElement.value}">
+    //         <p class="student-name">
+    //           ${nameInputElement.value}, любимый цвет
+    //           <span style="color: ${colorInputElement.value}"> ${colorInputElement.value}</span>
+    //         </p>
+    //         <button class="buttonHiClass" id="buttonHi" data-name="Люси">Приветствовать</button>
+    //     <button class="delete-button">Удалить</button>
+    //       </li>`;
+
+    renderStudents();
+     //Поскольку подписываться на события нам нужно всегда после нового рендера, НУЖНО инициализацию событий стр. 73 и стр.87 перенести в конец рендера 
+        // eventListener();
+        // initDeleteButtonsListeners();
+
+    nameInputElement.value = "";
+  });
+
+
+
+  //Удаление элементов списка:
+  // 1. Добавить в разметку кнопку удалить;
+  // 2. Добавить на кнопки удаления обработчик клика;
+  // 3. Реализовать внуть обработчика удаление элементов;
+
+
+//////Тестирую разный код---------------------------
+
+//Изменение значений объектов
+//получаю объект
+  const elems = document.querySelector('.student-name');
+    // console.log(elems[1]);
+//получаю содержимое объекта как есть вместе с HTML
+  const elemStudent = elems.innerHTML;
+    // console.log(elemStudent);
+//перезаписываю содержимое объекта
+  elems.innerHTML = 'Живи, а работай в свободное время!';
+  
+
+
+
+    //Поиск в массиве свойств isLover со значением true
+//     let p = students.filter(p => p.isLover == true);
+// console.log(p);
+
+
+
+////// Конец тестирования
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="parent">
+        <!-- <input id="elem" value="text" class="clasTest"> -->
+       
+      
+        <div id="elem" class="aaa bbb ccc">
+            <input type="button" value="one">
+        </div>
+        <div id="test" class="test">
+            <input type="button" value="two">
+        </div>
+        <div id="test2" class="test2">
+            <input type="button" value="three">
+        </div>
+        <input type="button" id="cnopka" value="Кнопка">
+
+        <img id="image" src="avatar.png">
+      
+
+    </div>
+
+</body>
+<script>
+
+const divs = document.querySelectorAll('div');
+divs[0].addEventListener ('click', () => alert(divs.values));
+// for (const div of divs) {
+//     div.addEventListener ('click', () => alert(div.innerHTML));
+// }
+
+const elem = document.querySelector('#elem');
+const cnopka = document.querySelector('#cnopka');
+
+let image = document.querySelector('#image');
+
+cnopka.addEventListener ('click', () => {
+    
+
+console.log(document.querySelector('#image').src);
+
+
+
+})
+
+
+</script>
+
+</html>
