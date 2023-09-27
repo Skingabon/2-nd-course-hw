@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Урок "Динамические обработчики событий и всплытие"</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <h1>Любимые цвета студентов</h1>
+  <ul class="students" id="list">
+    <li class="student" data-color="#ff2600">
+      <p class="student-name">
+        Глеб, любимый цвет
+        <span style="color: #ff2600;">#ff2600</span>
+      </p>
+    </li>
+    <li class="student" data-color="00f900">
+      <p class="student-name">
+        Иван, любимый цвет
+        <span style="color: #00f900;">#00f900</span>
+      </p>
+    </li>
+    <li class="student" data-color="#0432ff">
+      <p class="student-name">
+        Люси, любимый цвет
+        <span style="color: #0432ff;">#0432ff</span>
+      </p>
+    </li>
+  </ul>
+
+  <div class="form">
+    <h3 class="form-title">Форма добавления</h3>
+    <div class="form-row">
+      Имя:&nbsp;&nbsp;
+      <input type="text" id="name-input" class="input" placeholder="Василий" />
+    </div>
+    <div class="form-row">
+      Цвет:&nbsp;
+      <input type="color" id="color-input" class="color-input input" />
+      <br /><br />
+    </div>
+    <button class="button" id="add-button">Добавить</button>
+  </div>
+</body>
+
+<script>
+
+  const buttonElement = document.getElementById("add-button");
+  const listElement = document.getElementById("list");
+  const nameInputElement = document.getElementById("name-input");
+  const colorInputElement = document.getElementById("color-input");
+
+  //STEP 1-------------------------------------
+  //Проблемы:
+  // 1. Как добавлять обработчики событий на элементы списка
+  // 2. Как написать обработчик так, чтобы он удалял элементы списка
+  // Сейчас мы научимся добавлять простой обработчик на элементы списка, а затем мы научимся управлять данными, так что бьы обработччик удалял элмеенты списка.
+
+  // В этом уроке мы добавим на элементы списка обработчик который будет выводить в консоль любымый цвет студента, по которому мы кликнули.
+
+//STEP 2----------------------------------------
+  //Проблемы:
+  // 1. Как же нам выводить в консоль любимый цвет студента, когда пользователь кливает по студенту в списке
+
+  
+// Эта строка добавляет обработчики кликов ко всем элементам с классом student
+  const initEventListeners = () => {
+    //Эта строка находит все элементы с классом student в разметке
+    const studentElements = document.querySelectorAll('.student');
+//Эту коллекцию мы можем обойти только циклом for of
+// Цикл for проходит по каждому элементу в списке
+    for (const studentElement of studentElements) {
+    //Эта строка добавляет обработчик клика на конкретный элемент в списке!!!!!!!!!!!!!!!!!
+      studentElement.addEventListener('click', () => {
+      //console.log(studentElement);//Мне выводятся объекты DOM-дерева. В объекте дерева я могу полдучить доступ к его разметке. Т.е. вывести хтмлку внутренности его списка
+  //console.log(studentElement.innerHTML);
+    //Задам data атрибуты data-color каждому студенту и обращусь к ним в коде, чтобы при клике на студента нам показался его любимый цвет:
+    console.log(studentElement.dataset.color);
+      });
+    }
+  }
+
+  initEventListeners();
+  //Так как этот обработчик отработал при загрузке страницы, когда новых элементов в списке еще не было. То этот обработчик не будет работать на новых элементах. Поэтому этот обработчик нужно добавлять каждый раз, когды я изменяю разметку списка. Т.е. когда я в listElement записываю новое значение, я создаю каждый раз новые значения списка (браузер все старые элементы удаляет и создает новые). Поэтому каждый раз когда я меняю разметку, я должен запустить код этого обработчика клика по элементам списка студентов.
+
+
+  buttonElement.addEventListener("click", () => {
+    nameInputElement.classList.remove("input-error");
+
+    if (nameInputElement.value === "") {
+      nameInputElement.classList.add("input-error");
+      return;
+    }
+
+    listElement.innerHTML =
+      listElement.innerHTML +
+      `<li class="student" data-color="${colorInputElement.value}">
+            <p class="student-name">
+              ${nameInputElement.value}, любимый цвет
+              <span style="color: ${colorInputElement.value}"> ${colorInputElement.value}</span>
+            </p>
+          </li>`;
+
+          initEventListeners();
+
+    nameInputElement.value = "";
+  });
+
+
+
+</script>
+
+</html>
