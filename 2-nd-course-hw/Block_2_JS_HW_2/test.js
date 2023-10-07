@@ -13,81 +13,66 @@
 //  ++x;
 //  alert(x);
 
-// Задание 1
-let sky = 10;
-alert(sky);
+// // Задание 1
+// let sky = 10;
+// alert(sky);
 
-// Задание 2
-let iphoneYear = 2007;
-console.log(iphoneYear)
+// // Задание 2
+// let iphoneYear = 2007;
+// console.log(iphoneYear)
 
-//Задание 3
-let userNameJS = 'Brendanom Aikom';
-console.log(userNameJS);
+// //Задание 3
+// let userNameJS = 'Brendanom Aikom';
+// console.log(userNameJS);
 
-//Задание 4
-let x = 10;
-let y = 2;
-alert(x + y);
-alert(x - y);
-alert(x * y);
-alert(x / y);
+// //Задание 4
+// let x = 10;
+// let y = 2;
+// alert(x + y);
+// alert(x - y);
+// alert(x * y);
+// alert(x / y);
 
-//Задание 5
-let result = 2**5;
-alert(result);
+// //Задание 5
+// let result = 2**5;
+// alert(result);
 
-//Задание 6
-let a = 9;
-let b = 2;
-alert(a % b);
+// //Задание 6
+// let a = 9;
+// let b = 2;
+// alert(a % b);
 
-//Задание 7
-let num = 1;
-num +=5;
-alert(num);
+// //Задание 7
+// let num = 1;
+// num +=5;
+// alert(num);
 
-num -=3;
-alert(num);
+// num -=3;
+// alert(num);
 
-num *= 7;
-alert(num);
+// num *= 7;
+// alert(num);
 
-num /= 3;
-alert(num);
+// num /= 3;
+// alert(num);
 
-num +=1;
-alert(num);
+// num +=1;
+// alert(num);
 
-num -=1;
-alert(num);
+// num -=1;
+// alert(num);
 
-//Задание 8
-let age = prompt("Сколько вам лет?");
-alert(age);
+// //Задание 8
+// let age = prompt("Сколько вам лет?");
+// alert(age);
 
 // //Задание 9.0
-let user = {
-name: 'Tim',
-age: 80,
-isAdmin: true
-}
+// const user = {
+// name: 'Tim',
+// age: 80,
+// isAdmin: true
+// }
 
-//Задание 9.1
-user["city of residence"]
-
-//Задание 9.2
-user.age = 100;
-
-//Задание 9.3
-delete user["city of residence"]
-
-//Задание 9.4
-let info = prompt("Какую информацию хотите узнать о пользователе?");
-alert(user[info])
-
-//Задание 10
-let personName = prompt("Как Вас зовут?");
-alert(`Привет, ${personName}!`)
-
+// //Задание 9.1
+// user["city of residence"]
 
